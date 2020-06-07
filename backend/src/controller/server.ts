@@ -1,7 +1,7 @@
 import express from 'express';
 import { json, urlencoded } from 'body-parser';
 import { findAll, sync } from '../dao/pessoa/Pessoa';
-import * as cors from 'cors';
+import cors from 'cors';
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     res.send('Rodando');
 });
 
-app.use(cors);
+app.use(cors());
 
 app.get('/pessoas', (req, res) => {
   findAll()
