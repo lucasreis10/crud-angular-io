@@ -1,0 +1,22 @@
+<p>listar-pessoa works!</p>
+<ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+  [rowHeight]="50" [scrollbarV]="true" [sorts]="[{prop: 'nome', dir: 'desc'}]">
+
+  <ngx-datatable-column name="Nome">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.nome}}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Sobrenome">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.sobrenome}}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Idade">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.idade}}
+      </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
