@@ -5,14 +5,17 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: 'pessoa', // Carrega as rotas das funcionalidades dinamicamente
-        loadChildren: () => import('./funcionalidades/pessoa/pessoa.module').then(m => m.PessoaModule)
-      },
-
-    ]
-  }
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./funcionalidades/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'pessoa', // Carrega as rotas das funcionalidades dinamicamente
+    loadChildren: () => import('./funcionalidades/pessoa/pessoa.module').then(m => m.PessoaModule)
+  },
 ];
 
 @NgModule({

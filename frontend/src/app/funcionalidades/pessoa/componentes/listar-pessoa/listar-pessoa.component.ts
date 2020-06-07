@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PessoaService } from '../../servicos/pessoa.service';
+import { Pessoa } from '../../modelo/pessoa';
 
 @Component({
   selector: 'app-listar-pessoa',
@@ -10,7 +11,7 @@ export class ListarPessoaComponent implements OnInit {
 
   constructor(public service: PessoaService) { }
 
-  rows = [];
+  rows:Pessoa[] = [];
 
   ngOnInit() {
     this.fetch((data) => {
@@ -19,7 +20,7 @@ export class ListarPessoaComponent implements OnInit {
   }
 
   fetch(cb) {
-    this.service.getAll().then(rows => {
+    this.service.getAll().subscribe(rows => {
       this.rows = rows
     });
   }
