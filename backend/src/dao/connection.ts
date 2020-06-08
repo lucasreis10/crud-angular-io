@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize('lab', 'root', '12345678', {
-  host: 'lucas-mysql-lab.clivocypkkfs.us-east-2.rds.amazonaws.com',
+const sequelize = new Sequelize('lab', 'root', '', {
+  host: '',
   dialect:'mysql',
 });
 

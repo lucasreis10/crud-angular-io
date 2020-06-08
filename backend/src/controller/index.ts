@@ -1,6 +1,5 @@
 import express from 'express';
 import { json, urlencoded } from 'body-parser';
-import { findAll, sync } from '../dao/pessoa/Pessoa';
 import cors from 'cors';
 import { pessoaController } from './pessoa-controller';
 
