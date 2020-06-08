@@ -1,6 +1,6 @@
 <p>listar-pessoa works!</p>
 <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-  [rowHeight]="50" [scrollbarV]="true" [sorts]="[{prop: 'nome', dir: 'desc'}]">
+  [rowHeight]="50" rowHeight="auto" [sorts]="[{prop: 'nome', dir: 'desc'}]">
 
   <ngx-datatable-column name="Nome">
     <ng-template let-row="row" ngx-datatable-cell-template>
