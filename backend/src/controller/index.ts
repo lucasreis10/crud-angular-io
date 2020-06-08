@@ -1,15 +1,12 @@
 import express from 'express';
-import { json, urlencoded } from 'body-parser';
-import cors from 'cors';
 import { pessoaController } from './pessoa-controller';
+import configMiddleware from './config-middleware';
 
 const app = express();
 
-app.use(urlencoded({ extended: true }));
-app.use(json());
-app.use(cors());
+configMiddleware(app);
 
-app.use('/pessoas', pessoaController);
+pessoaController(app);
 
 export default app;
 
